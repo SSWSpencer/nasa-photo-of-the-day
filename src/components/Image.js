@@ -15,27 +15,26 @@ const Image = props => {
     margin: 0 auto;
     border-radius: 20px;
     border: 5px solid black;
+    `
+  const CopyrightInfo = styled.p`
+    color: grey;
+    width: 90%;
+    text-align: right;
+    `
 
-` 
-const CopyrightInfo = styled.p`
-color: grey;
-width: 90%;
-text-align: right;
-`
-
-const LoadingScreen = styled.div`
-width: 80%;
-margin: 0 auto;
-text-align: center;
-`
-if (!props.url) {
-  return (
-  <LoadingScreen>
-    <h3>Loading...</h3>
-    <Spinner style={{ width: '3rem', height: '3rem' }} />
-  </LoadingScreen>
-  )
-}
+  const LoadingScreen = styled.div`
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    `
+  if (!props.url) {
+    return (
+    <LoadingScreen>
+      <h3>Loading...</h3>
+      <Spinner style={{ width: '3rem', height: '3rem' }} />
+    </LoadingScreen>
+    )
+  }
   return (
     <div>
       <a rel="noopener noreferrer" href={props.hdurl} target="_blank"><ImageOfDay onMouseLeave={toggle} onMouseEnter={toggle} alt={props.alt} src={props.url}/></a>
